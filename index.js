@@ -1,14 +1,14 @@
 require("dotenv").config();
 const express = require("express");
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const living_network = require("./models/living_network");
 
 // create application/json parser
-var jsonParser = bodyParser.json()
+var jsonParser = bodyParser.json();
 
 // create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -81,27 +81,25 @@ app.post("/save_userdata", jsonParser, async (req, res) => {
   try {
     await living_network.create([
       {
-        UserData: req.body.userdata
-      }
+        UserData: req.body.userdata,
+      },
     ]);
-    res.send("Add UserData Success").json(req.body.userdata);
+    res.send("Add UserData Success : " + _id).json();
   } catch (error) {
     console.log(req.body);
     console.log("err : " + error);
   }
 });
 
-app.post("/create_userdata", jsonParser, async (req, res) => {
+app.post("/remove_userdata", jsonParser, async (req, res) => {
   try {
     await living_network.create([
       {
-        _id: Math.floor(100000 + Math.random() * 900000),
-        UserData: req.body.userdata
-      }
+        _id: req.body.token,
+      },
     ]);
-    res.send("Add UserData Success").json(_id);
+    res.send("Remove UserData Success");
   } catch (error) {
-    console.log(req.body);
     console.log("err : " + error);
   }
 });
