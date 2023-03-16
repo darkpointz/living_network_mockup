@@ -25,17 +25,17 @@ app.get("/add", async (req, res) => {
   try {
     await living_network.insertMany([
       {
-        "UserData": {
-          "msisdn" : "08123456789",
-          "networkType" : "5G",
-          "cellId" : "true",
-          "paymentType" : "postpaid",
-          "modelType" : "5G",
-          "customerState" : "active",
-          "bssrule" : "5G package",
-          "eco" : "true",
-          "alarm" : "true"
-        }
+        UserData: {
+          msisdn: "08123456789",
+          networkType: "5G",
+          cellId: "true",
+          paymentType: "postpaid",
+          modelType: "5G",
+          customerState: "active",
+          bssrule: "5G package",
+          eco: "true",
+          alarm: "true",
+        },
       },
     ]);
     res.send("Add Success");
@@ -72,7 +72,11 @@ app.get("/reset", async (req, res) => {
 
 app.post("/save_userdata", async (req, res) => {
   try {
-    await living_network.insertMany([req.body]);
+    await living_network.insertMany([
+      {
+        UserData: req.body.UserData,
+      },
+    ]);
     res.send("Add UserData Success").json(req.body);
   } catch (error) {}
 });

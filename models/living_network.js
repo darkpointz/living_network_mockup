@@ -10,6 +10,10 @@ const LNSchema = new Schema({
     type: String,
     required: false,
   },
+  token : {
+    type: String,
+    required: false,
+  },
   UserData:{
     type: Object,
     required: false,
