@@ -50,7 +50,7 @@ app.get("/reset", async (req, res) => {
 
 app.post("/save_userdata", async (req, res) => {
   try {
-    await living_network.insert(req.body);
+    await living_network.save(req.body);
     res.send("Add UserData Success").json(req.body);
   } catch (error) {}
 });
