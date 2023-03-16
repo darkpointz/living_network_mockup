@@ -72,7 +72,7 @@ app.get("/addToken", async (req, res) => {
         token: `${getRandom(10)}`,
       },
     ]);
-    res.send("Add Success : /n" + req.body);
+    res.send("Add Success : \n" + req);
   } catch (error) {
     console.log("err : " + error);
   }
