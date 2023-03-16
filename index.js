@@ -79,12 +79,14 @@ app.get("/reset", async (req, res) => {
 
 app.post("/save_userdata", jsonParser, async (req, res) => {
   try {
-    await living_network.create([
-      {
-        UserData: req.body.userdata,
-      },
-    ]);
-    res.send("Add UserData Success : token is " + res);
+    await living_network.create(function (result) {
+      [
+        {
+          UserData: req.body.userdata,
+        },
+      ];
+    });
+    res.send("Add UserData Success : token is " + result._id);
   } catch (error) {
     console.log(req.body);
     console.log("err : " + error);
