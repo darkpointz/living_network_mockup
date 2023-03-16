@@ -94,6 +94,14 @@ app.get("/addToken", async (req, res) => {
 //     console.log("err : " + error);
 //   }
 // });
+app.get("/findToken", async (req,res) => {
+  const ln = await living_network.find({token: "2572634263"});
+  if (ln) {
+    res.json(ln);
+  } else {
+    res.send("Something wrong");
+  }
+})
 
 app.get("/reset", async (req, res) => {
   try {
