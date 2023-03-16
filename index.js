@@ -117,8 +117,8 @@ app.get("/addToken", async (req, res) => {
 //     console.log("err : " + error);
 //   }
 // });
-app.get("/findToken", async (req,res) => {
-  const ln = await living_network.findOne({_id: "6412c106d0cefc3a4583db11"});
+app.get("/findToken/:token", async (req,res) => {
+  const ln = await living_network.findOne({_id: req.params.token});
   if (ln) {
     res.json(ln);
   } else {
