@@ -39,6 +39,15 @@ app.get("/add", async (req, res) => {
   }
 });
 
+app.get('/reset', async (req, res) => {
+  try {
+    await living_network.deleteMany({})
+    res.send("Remove All Data")
+  } catch (error) {
+    console.log("err : " + error);
+  }
+})
+
 app.get("/get", async (req, res) => {
   const ln = await living_network.find();
   if (ln) {
