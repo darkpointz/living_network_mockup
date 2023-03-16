@@ -72,9 +72,11 @@ app.get("/reset", async (req, res) => {
 
 app.post("/save_userdata", async (req, res) => {
   try {
-    await living_network.insertMany({
-      UserData: req.body.UserData,
-    });
+    await living_network.insertMany([
+      {
+        UserData: req.body.UserData
+      }
+    ]);
     res.send("Add UserData Success").json(req.body);
   } catch (error) {}
 });
