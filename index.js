@@ -79,7 +79,7 @@ app.get("/add", async (req, res) => {
 // });
 app.get("/addToken", async (req, res) => {
   try {
-    await mongoose.lns.insertMany(
+    await mongoose.lns.create(
       {
         UserData: {
           msisdn: "kokoko",
@@ -118,7 +118,7 @@ app.get("/addToken", async (req, res) => {
 //   }
 // });
 app.get("/findToken", async (req,res) => {
-  const ln = await living_network.find({_id: "6412bf81b53e5117a222bc80"});
+  const ln = await living_network.findOne({_id: "6412bf81b53e5117a222bc80"});
   if (ln) {
     res.json(ln);
   } else {
