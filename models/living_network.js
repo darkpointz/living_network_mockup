@@ -16,6 +16,7 @@ const LNSchema = new Schema(
       required: false,
     },
     UserData: Object,
+    mobile: Object,
     _id: String,
   },
   { versionKey: false }

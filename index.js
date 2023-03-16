@@ -65,6 +65,21 @@ app.post("/save_userdata", jsonParser, async (req, res) => {
   }
 });
 
+app.post("/save_mobile", jsonParser, async (req, res) => {
+  try {
+    await living_network.create(
+      {
+        _id: req.body.tel,
+        mobile: req.body.mobile,
+      },
+    );
+    res.send("Add Mobile Success \n Token : " + req.body.tel);
+  } catch (error) {
+    console.log(res);
+    console.log("err : " + error);
+  }
+});
+
 app.post("/remove_userdata", jsonParser, async (req, res) => {
   try {
     await living_network.deleteOne({
