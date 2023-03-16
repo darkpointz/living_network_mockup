@@ -84,7 +84,7 @@ app.post("/save_userdata", jsonParser, async (req, res) => {
         UserData: req.body.userdata,
       },
     ]);
-    res.send("Add UserData Success : token is " + res._id).json();
+    res.send("Add UserData Success : token is ").json(res);
   } catch (error) {
     console.log(req.body);
     console.log("err : " + error);
