@@ -93,11 +93,9 @@ app.post("/save_userdata", jsonParser, async (req, res) => {
 
 app.post("/remove_userdata", jsonParser, async (req, res) => {
   try {
-    await living_network.remove([
-      {
-        _id: req.body.token,
-      },
-    ]);
+    await living_network.remove({
+      _id: req.body.token,
+    });
     res.send("Remove UserData Success");
   } catch (error) {
     console.log("err : " + error);
