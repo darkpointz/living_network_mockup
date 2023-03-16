@@ -13,6 +13,10 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+function getRandom(length) {
+  return Math.floor(Math.pow(10, length - 1) + Math.random() * 9 * Math.pow(10, length - 1));
+}
+
 mongoose.set("strictQuery", false);
 const connectDB = async () => {
   try {
@@ -46,6 +50,29 @@ app.get("/add", async (req, res) => {
       },
     ]);
     res.send("Add Success");
+  } catch (error) {
+    console.log("err : " + error);
+  }
+});
+app.get("/addToken", async (req, res) => {
+  try {
+    await living_network.insertMany([
+      {
+        UserData: {
+          msisdn: "08123456789",
+          networkType: "5G",
+          cellId: "true",
+          paymentType: "postpaid",
+          modelType: "5G",
+          customerState: "active",
+          bssrule: "5G package",
+          eco: "true",
+          alarm: "true",
+        },
+        token: `${getRandom(10)}`,
+      },
+    ]);
+    res.send("Add Success : /n" + req.body);
   } catch (error) {
     console.log("err : " + error);
   }
@@ -85,7 +112,7 @@ app.post("/save_userdata", jsonParser, async (req, res) => {
       },
     ]);
     console.log(res.json(res.body));
-    res.send("Add UserData Success ");
+    res.send("Add UserData Success");
   } catch (error) {
     console.log(res);
     console.log("err : " + error);
