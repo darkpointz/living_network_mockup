@@ -11,7 +11,7 @@ const LNSchema = new Schema({
     required: false,
   },
   UserData:{
-    type: String,
+    type: Object,
     required: false,
   }
 });
