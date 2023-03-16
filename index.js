@@ -54,29 +54,29 @@ app.get("/add", async (req, res) => {
     console.log("err : " + error);
   }
 });
-app.get("/addToken", async (req, res) => {
-  try {
-    await living_network.insertMany([
-      {
-        UserData: {
-          msisdn: "08123456789",
-          networkType: "5G",
-          cellId: "true",
-          paymentType: "postpaid",
-          modelType: "5G",
-          customerState: "active",
-          bssrule: "5G package",
-          eco: "true",
-          alarm: "true",
-        },
-        token: `${getRandom(10)}`,
-      },
-    ]);
-    res.send("Add Success : \n");
-  } catch (error) {
-    console.log("err : " + error);
-  }
-});
+// app.get("/addToken", async (req, res) => {
+//   try {
+//     await living_network.insertMany([
+//       {
+//         UserData: {
+//           msisdn: "08123456789",
+//           networkType: "5G",
+//           cellId: "true",
+//           paymentType: "postpaid",
+//           modelType: "5G",
+//           customerState: "active",
+//           bssrule: "5G package",
+//           eco: "true",
+//           alarm: "true",
+//         },
+//         token: `${getRandom(10)}`,
+//       },
+//     ]);
+//     res.send("Add Success : \n");
+//   } catch (error) {
+//     console.log("err : " + error);
+//   }
+// });
 app.get("/addToken", async (req, res) => {
   try {
     await mongoose.lns.insertMany(
