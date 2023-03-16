@@ -78,7 +78,10 @@ app.post("/save_userdata", async (req, res) => {
       }
     ]);
     res.send("Add UserData Success").json(req.body);
-  } catch (error) {}
+  } catch (error) {
+    console.log(req.body.UserData);
+    console.log("err : " + error);
+  }
 });
 
 app.get("/get", async (req, res) => {
