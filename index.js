@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const living_network = require("./models/living_network");
 const mobile = require("./models/mobile");
+const performance = require("./models/performance");
 
 // create application/json parser
 var jsonParser = bodyParser.json();
@@ -53,7 +54,7 @@ app.get("/reset", async (req, res) => {
 
 app.post("/save_userdata", jsonParser, async (req, res) => {
   try {
-    await living_network.db.mobile({
+    await living_network.create({
       _id: req.body.token,
       UserData: req.body.userdata,
     });
@@ -77,8 +78,32 @@ app.post("/save_mobile", jsonParser, async (req, res) => {
   }
 });
 
+app.post("/save_performace", jsonParser, async (req, res) => {
+  try {
+    await performance.create({
+      _id: req.body.msisdn,
+      dlSpeed: req.body.dlSpeed,
+      ulSpeed: req.body.ulSpeed,
+      latency: req.body.latency
+    });
+    res.send("Add Performance Success \n tel : " + req.body.msisdn);
+  } catch (error) {
+    console.log(res);
+    console.log("err : " + error);
+  }
+});
+
 app.get("/findMsisdn/:msisdn", async (req, res) => {
   const ln = await mobile.findOne({ _id: req.params.msisdn });
+  if (ln) {
+    res.json(ln);
+  } else {
+    res.send("Something wrong");
+  }
+});
+
+app.get("/findPerformace/:msisdn", async (req, res) => {
+  const ln = await performance.findOne({ _id: req.params.msisdn });
   if (ln) {
     res.json(ln);
   } else {
