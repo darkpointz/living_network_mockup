@@ -74,7 +74,7 @@ app.post("/save_userdata", async (req, res) => {
   try {
     await living_network.create([
       {
-        UserData: req.body.userdata
+        UserData: req.body
       }
     ]);
     res.send("Add UserData Success").json(req.body);
