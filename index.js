@@ -72,7 +72,7 @@ app.get("/addToken", async (req, res) => {
         token: `${getRandom(10)}`,
       },
     ]);
-    res.send("Add Success : \n" + token);
+    res.send("Add Success : \n");
   } catch (error) {
     console.log("err : " + error);
   }
@@ -114,11 +114,11 @@ app.get("/reset", async (req, res) => {
 
 app.post("/save_userdata", jsonParser, async (req, res) => {
   try {
-    await living_network.create([
+    await living_network.create(
       {
         UserData: req.body.userdata,
       },
-    ]);
+    );
     console.log(res.json(res.body));
     res.send("Add UserData Success");
   } catch (error) {
