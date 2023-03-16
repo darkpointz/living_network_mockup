@@ -1,7 +1,14 @@
 require("dotenv").config();
 const express = require("express");
+const bodyParser = require("body-parser")
 const mongoose = require("mongoose");
 const living_network = require("./models/living_network");
+
+// create application/json parser
+var jsonParser = bodyParser.json()
+
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -70,7 +77,7 @@ app.get("/reset", async (req, res) => {
   }
 });
 
-app.post("/save_userdata", async (req, res) => {
+app.post("/save_userdata", jsonParser, async (req, res) => {
   try {
     await living_network.create([
       {
