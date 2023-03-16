@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const living_network = require("./models/living_network");
+const mobile = require("./models/mobile");
 
 // create application/json parser
 var jsonParser = bodyParser.json();
@@ -32,14 +33,14 @@ app.get("/", (req, res) => {
   res.send({ title: "Living_Network" });
 });
 
-app.get("/findToken/:token", async (req,res) => {
-  const ln = await living_network.findOne({_id: req.params.token});
+app.get("/findToken/:token", async (req, res) => {
+  const ln = await living_network.findOne({ _id: req.params.token });
   if (ln) {
     res.json(ln);
   } else {
     res.send("Something wrong");
   }
-})
+});
 
 app.get("/reset", async (req, res) => {
   try {
@@ -52,12 +53,10 @@ app.get("/reset", async (req, res) => {
 
 app.post("/save_userdata", jsonParser, async (req, res) => {
   try {
-    await living_network.create(
-      {
-        _id: req.body.token,
-        UserData: req.body.userdata,
-      },
-    );
+    await living_network.db.mobile({
+      _id: req.body.token,
+      UserData: req.body.userdata,
+    });
     res.send("Add UserData Success \n Token : " + req.body.token);
   } catch (error) {
     console.log(res);
@@ -67,13 +66,33 @@ app.post("/save_userdata", jsonParser, async (req, res) => {
 
 app.post("/save_mobile", jsonParser, async (req, res) => {
   try {
-    await living_network.create(
-      {
-        _id: req.body.tel,
-        mobile: req.body.mobile,
-      },
-    );
-    res.send("Add Mobile Success \n Token : " + req.body.tel);
+    await mobile.create({
+      _id: req.body.tel,
+      mobile: req.body.mobile,
+    });
+    res.send("Add Mobile Success \n tel : " + req.body.tel);
+  } catch (error) {
+    console.log(res);
+    console.log("err : " + error);
+  }
+});
+
+app.get("/findMsisdn/:msisdn", async (req, res) => {
+  const ln = await mobile.findOne({ _id: req.params.msisdn });
+  if (ln) {
+    res.json(ln);
+  } else {
+    res.send("Something wrong");
+  }
+});
+
+app.post("/save_performance", jsonParser, async (req, res) => {
+  try {
+    await living_network.create({
+      _id: req.body.msisdn,
+      performance: req.body.performance,
+    });
+    res.send("Add Performance Success \n Token : " + req.body.tel);
   } catch (error) {
     console.log(res);
     console.log("err : " + error);
