@@ -15,6 +15,7 @@ const LNSchema = new Schema({
     required: false,
   },
   UserData: Object,
+  _id: String,
 });
 
 module.exports = mongoose.model("LN", LNSchema);

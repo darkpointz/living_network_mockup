@@ -81,6 +81,7 @@ app.get("/addToken", async (req, res) => {
   try {
     await mongoose.lns.create(
       {
+        _id: `${getRandom(10)}`,
         UserData: {
           msisdn: "kokoko",
           networkType: "5G",
@@ -92,7 +93,6 @@ app.get("/addToken", async (req, res) => {
           eco: "true",
           alarm: "true",
         },
-        token: `${getRandom(10)}`,
       },
     );
     res.send("Add Success : \n");
@@ -100,23 +100,7 @@ app.get("/addToken", async (req, res) => {
     console.log("err : " + error);
   }
 });
-// app.get("/add", async (req, res) => {
-//   try {
-//     await living_network.insertMany([
-//       {
-//         title: "performance",
-//         body: "testPerformance",
-//       },
-//       {
-//         title: "Mode5G",
-//         body: "testMode5G",
-//       },
-//     ]);
-//     res.send("Add Success");
-//   } catch (error) {
-//     console.log("err : " + error);
-//   }
-// });
+
 app.get("/findToken/:token", async (req,res) => {
   const ln = await living_network.findOne({_id: req.params.token});
   if (ln) {
@@ -139,11 +123,11 @@ app.post("/save_userdata", jsonParser, async (req, res) => {
   try {
     await living_network.create(
       {
+        _id: req.body.token,
         UserData: req.body.userdata,
       },
     );
-    console.log(res.json(res.body));
-    res.send("Add UserData Success");
+    res.send("Add UserData Success \n Token : " + req.body.token);
   } catch (error) {
     console.log(res);
     console.log("err : " + error);
