@@ -79,7 +79,7 @@ app.post("/save_userdata", async (req, res) => {
     ]);
     res.send("Add UserData Success").json(req.body);
   } catch (error) {
-    console.log(req.body.userdata);
+    console.log(req.body);
     console.log("err : " + error);
   }
 });
