@@ -91,6 +91,21 @@ app.post("/save_userdata", jsonParser, async (req, res) => {
   }
 });
 
+app.post("/create_userdata", jsonParser, async (req, res) => {
+  try {
+    await living_network.create([
+      {
+        _id: Math.floor(100000 + Math.random() * 900000),
+        UserData: req.body.userdata
+      }
+    ]);
+    res.send("Add UserData Success").json(_id);
+  } catch (error) {
+    console.log(req.body);
+    console.log("err : " + error);
+  }
+});
+
 app.get("/get", async (req, res) => {
   const ln = await living_network.find();
   if (ln) {
