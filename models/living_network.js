@@ -4,12 +4,16 @@ const Schema = mongoose.Schema;
 const LNSchema = new Schema({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   body: {
     type: String,
-    required: true,
+    required: false,
   },
+  UserData:{
+    type: Object,
+    required: false,
+  }
 });
 
 module.exports = mongoose.model("LN", LNSchema);
