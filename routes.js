@@ -2,11 +2,18 @@ const living_network = require("./models/living_network.js");
 const mobile = require("./models/mobile");
 const performance = require("./models/performance");
 const location = require("./models/location.js");
+const mode = require("./models/mode");
 
 const location_mockup = require("./models/json/location_mockup.json");
 const location_mockup2 = require("./models/json/locations_wifi.json");
 
+const bodyParser = require("body-parser");
+
+var jsonParser = bodyParser.json();
+
 module.exports = (app) => {
+  //===============================================================================Location==========================================================================================
+
   app.get("/create_locations_AISSHOP", async (req, res) => {
     try {
       const locationD = await location.create({
@@ -50,6 +57,31 @@ module.exports = (app) => {
       locationD != null ? res.json(locationD) : res.send("Something went wrong");
     } catch (error) {
       console.log("err : " + error);
+    }
+  });
+
+  //=========================================================================================================================================================================
+
+  //===============================================================================Mode======================================================================================
+
+  app.post("/create_mode", jsonParser, async (req, res) => {
+    try {
+      const modeRes = await mode.create({
+        _id: req.body.msisdn,
+        useMode: req.body.useMode,
+      });
+      res.send("Create mode success \n _id : " + req.body.msisdn);
+    } catch (error) {
+      console.log("err : " + error);
+    }
+  });
+
+  app.get("/get_mode/:msisdn", async (req, res) => {
+    const userMode = await mode.findById({ _id: req.params.msisdn });
+    if (userMode) {
+      res.json(userMode);
+    } else {
+      res.send("Something wrong");
     }
   });
 };
