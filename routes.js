@@ -4,6 +4,7 @@ const performance = require("./models/performance");
 const location = require("./models/location.js");
 
 const location_mockup = require("./models/json/location_mockup.json");
+// const location_mockup2 = require("./models/json/location_mockup2.json");
 
 module.exports = (app) => {
   app.get("/create_locations", async (req, res) => {
@@ -19,6 +20,20 @@ module.exports = (app) => {
       console.log("err : " + error);
     }
   });
+
+  // app.get("/create_locations2", async (req, res) => {
+  //   try {
+  //     const locationD = await location.create({
+  //       _id: "LM_WIFI_AP_BKK",
+  //       type: location_mockup2.type,
+  //       crs: location_mockup2.crs,
+  //       features: location_mockup2.features,
+  //     });
+  //     res.send("Add location Success \n" + locationD);
+  //   } catch (error) {
+  //     console.log("err : " + error);
+  //   }
+  // });
 
   app.get("/get_locations", async (req, res) => {
     try {

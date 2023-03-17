@@ -1,20 +1,21 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+// const { GridFsStorage } = require("multer-gridfs-storage");
 const locationSchema = new Schema(
   {
     _id: String,
     type: {
       type: String,
       default: "FeatureCollection",
-      required:true,
+      required: true,
     },
     crs: {
       type: Object,
-      required:true,
+      required: true,
     },
     features: {
       type: Array,
-      required:true,
+      required: true,
     },
   },
   {
@@ -22,4 +23,5 @@ const locationSchema = new Schema(
   }
 );
 
+// module.exports = new mongoose.mongo.GridFSBucket("location", locationSchema);
 module.exports = mongoose.model("location", locationSchema);
