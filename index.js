@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const living_network = require("./models/living_network");
 const mobile = require("./models/mobile");
 const performance = require("./models/performance");
+const route = require('./routes');
 
 // create application/json parser
 var jsonParser = bodyParser.json();
@@ -14,6 +15,8 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+route(app);
 
 function getRandom(length) {
   return Math.floor(Math.pow(10, length - 1) + Math.random() * 9 * Math.pow(10, length - 1));
@@ -108,19 +111,6 @@ app.get("/findPerformace/:msisdn", async (req, res) => {
     res.json(ln);
   } else {
     res.send("Something wrong");
-  }
-});
-
-app.post("/save_performance", jsonParser, async (req, res) => {
-  try {
-    await living_network.create({
-      _id: req.body.msisdn,
-      performance: req.body.performance,
-    });
-    res.send("Add Performance Success \n Token : " + req.body.tel);
-  } catch (error) {
-    console.log(res);
-    console.log("err : " + error);
   }
 });
 
