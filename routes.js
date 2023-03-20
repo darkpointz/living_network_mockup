@@ -3,6 +3,7 @@ const mobile = require("./models/mobile");
 const performance = require("./models/performance");
 const location = require("./models/location.js");
 const mode = require("./models/mode");
+const mongoose = require("mongoose");
 
 const location_mockup = require("./models/json/location_mockup.json");
 const location_mockup2 = require("./models/json/locations_wifi.json");
@@ -87,6 +88,8 @@ module.exports = (app) => {
   //=========================================================================================================================================================================
 
   //===============================================================================Anti-Corrupt======================================================================================
+  const token =
+    "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlVeTRLUjlzOEoifQ.eyJpc3MiOiJzcmYuYWlzLmNvLnRoL2FkbWQiLCJzdWIiOiJ0b2tlbl9jbGllbnRfY3JlZGVudGlhbHMiLCJhdWQiOiJTVzhMaUdGd3dqQmJ0eDd0d2c3Z2dhZHVxL2VlZzhFM2c3dmtrVlNCVis5aVpxZkRsbERqMnc9PSIsImV4cCI6MTk4NzI3MTE2MywiaWF0IjoxNjcxNzAxNjQzLCJqdGkiOiI0RjhBaUM1S1VzT3gyeDQ3UzhlOGJKIiwiY2xpZW50IjoiT1RBd01EQXdNREF3TURBd05qWXpMRzE1WVdsemZFSmhZMnRsYm1SOE1TNHdMakE9Iiwic3NpZCI6IjNxNGlmMWVaMTF4NkdDSzRPWGQ4VUIifQ.d64EmMj1NQEE1yciOZwVrdS7gAeD6A-gQb3SOHkAuap2vgcBTi07G_WvX5Q2gVlGlttq-j05S1Qp6LNKl3vo-DqKXhc5PpmYK6pMxDiur_97OBB2ePAdcJJRpMNQUBmLOXIFPKxKN4WP6mRTVCkayqso1G_v0cILtIpPokvFHOc";
   //Authen Token
   const authenToken = require("./models/json/authenToken/authenToken.json");
   const errorAuthenToken = require("./models/json/authenToken/error.json");
@@ -128,6 +131,28 @@ module.exports = (app) => {
       res.json(errorDeletePackage);
     } else {
       res.json(deletePackage);
+    }
+  });
+
+  //Get Cell Id
+  const cellId = require("./models/cell_id");
+  app.get("/AC/v1/cellid", async (req, res) => {
+    try {
+      const resp = await cellId.findOne({ _id: token });
+      resp != null ? res.json(resp) : res.send("Something went wrong");
+    } catch (error) {
+      console.log("err : " + error);
+    }
+  });
+
+  //Get Promo
+  const promo = require('./models/promo')
+  app.get("/AC/v1/promo", async (req, res) => {
+    try {
+      const resp = await promo.findOne({ _id: token });
+      resp != null ? res.json(resp) : res.send("Something went wrong");
+    } catch (error) {
+      console.log("err : " + error);
     }
   });
 };
