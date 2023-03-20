@@ -47,14 +47,14 @@ app.get("/findToken/:token", async (req, res) => {
   }
 });
 
-app.get("/reset", async (req, res) => {
-  try {
-    await living_network.deleteMany({});
-    res.send("Remove All Data");
-  } catch (error) {
-    console.log("err : " + error);
-  }
-});
+// app.get("/reset", async (req, res) => {
+//   try {
+//     await living_network.deleteMany({});
+//     res.send("Remove All Data");
+//   } catch (error) {
+//     console.log("err : " + error);
+//   }
+// });
 
 app.post("/save_userdata", jsonParser, async (req, res) => {
   try {
