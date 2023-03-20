@@ -1,9 +1,6 @@
-const living_network = require("./models/living_network.js");
-const mobile = require("./models/mobile");
-const performance = require("./models/performance");
 const location = require("./models/location.js");
 const mode = require("./models/mode");
-const mongoose = require("mongoose");
+
 
 const location_mockup = require("./models/json/location_mockup.json");
 const location_mockup2 = require("./models/json/locations_wifi.json");

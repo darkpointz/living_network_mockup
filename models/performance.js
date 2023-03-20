@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-
+const db = require("../db/createConnection");
+const test_db = db.useDb('test')
 const Schema = mongoose.Schema;
 
 const performanceSchema = new Schema(
@@ -12,4 +13,4 @@ const performanceSchema = new Schema(
   { versionKey: false }
 );
 
-module.exports = mongoose.model("performace", performanceSchema);
+module.exports = test_db.model("performace", performanceSchema);

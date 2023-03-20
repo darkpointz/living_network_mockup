@@ -6,6 +6,7 @@ const living_network = require("./models/living_network");
 const mobile = require("./models/mobile");
 const performance = require("./models/performance");
 const route = require('./routes');
+const connection = require('./db/createConnection')
 
 // create application/json parser
 var jsonParser = bodyParser.json();
@@ -23,13 +24,10 @@ function getRandom(length) {
 }
 
 mongoose.set("strictQuery", false);
-const living_network_mockup = process.env.MONGO_URI_MAIN + "living_network_mockup"
 const connectDB = async () => {
   try {
-    // const conn = await mongoose.connect(living_network_mockup);
-    // const conn = await mongoose.connect(process.env.MONGO_URI);
-    const conn = await mongoose.connect(process.env.MONGO_URI_MAIN);
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    const conn = connection;
+    console.log(`MongoDB Connected: ${conn.host}`);
   } catch (error) {
     console.log(error);
     process.exit(1);

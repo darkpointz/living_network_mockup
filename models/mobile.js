@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-
+const db = require("../db/createConnection");
+const test_db = db.useDb('test')
 const Schema = mongoose.Schema;
 
 const mobileSchema = new Schema(
@@ -10,4 +11,4 @@ const mobileSchema = new Schema(
   { versionKey: false }
 );
 
-module.exports = mongoose.model("mobile", mobileSchema);
+module.exports = test_db.model("mobile", mobileSchema);

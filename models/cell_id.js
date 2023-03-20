@@ -1,4 +1,6 @@
+const db = require("../db/createConnection");
 const mongoose = require("mongoose");
+const ln_mu = db.useDb('living_network_mockup')
 const Schema = mongoose.Schema;
 const cellIdSchema = new Schema(
   {
@@ -9,4 +11,4 @@ const cellIdSchema = new Schema(
   }
 );
 
-module.exports = mongoose.model("Cell_Id", cellIdSchema);
+module.exports = ln_mu.model("Cell_Id", cellIdSchema);

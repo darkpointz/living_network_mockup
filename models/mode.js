@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const db = require("../db/createConnection");
+const test_db = db.useDb('test')
 
 const Schema = mongoose.Schema;
 const ModeSchema = new Schema(
@@ -9,4 +11,4 @@ const ModeSchema = new Schema(
   { versionKey: false }
 );
 
-module.exports = mongoose.model("mode", ModeSchema);
+module.exports = test_db.model("mode", ModeSchema);

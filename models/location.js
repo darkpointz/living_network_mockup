@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const db = require('../db/createConnection')
+const test_db = db.useDb('test')
 const Schema = mongoose.Schema;
 // const { GridFsStorage } = require("multer-gridfs-storage");
 const locationSchema = new Schema(
@@ -23,5 +25,4 @@ const locationSchema = new Schema(
   }
 );
 
-// module.exports = new mongoose.mongo.GridFSBucket("location", locationSchema);
-module.exports = mongoose.model("location", locationSchema);
+module.exports = test_db.model("location", locationSchema);
