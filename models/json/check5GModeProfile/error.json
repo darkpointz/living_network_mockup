@@ -1,0 +1,5 @@
+{
+  "resultCode": "$APP_ERROR_CODE",
+  "resultDesc": "$APP_ERROR_DESCRIPTION",
+  "developerMessage": "$APP_DEVELOPER_MESSAGE"
+}

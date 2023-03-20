@@ -84,4 +84,50 @@ module.exports = (app) => {
       res.send("Something wrong");
     }
   });
+  //=========================================================================================================================================================================
+
+  //===============================================================================Anti-Corrupt======================================================================================
+  //Authen Token
+  const authenToken = require("./models/json/authenToken/authenToken.json");
+  const errorAuthenToken = require("./models/json/authenToken/error.json");
+  app.post("/AC/v1/authenToken", jsonParser, async (req, res) => {
+    if (req.body.ssbToken == null) {
+      res.json(errorAuthenToken);
+    } else {
+      res.json(authenToken);
+    }
+  });
+
+  //check5GModeProfile
+  const check5GModeProfile = require("./models/json/check5GModeProfile/res.json");
+  const errCheck5GModeProfile = require("./models/json/check5GModeProfile/error.json");
+  app.post("/AC/v1/check5GModeProfile", jsonParser, async (req, res) => {
+    if (req.body.accessToken == null) {
+      res.json(errCheck5GModeProfile);
+    } else {
+      res.json(check5GModeProfile);
+    }
+  });
+
+  //Add Package
+  const addPackage = require("./models/json/addPackage/res.json");
+  const errorAddPackage = require("./models/json/addPackage/error.json");
+  app.post("/AC/v1/addPackage", jsonParser, async (req, res) => {
+    if (req.body.accessToken == null) {
+      res.json(errorAddPackage);
+    } else {
+      res.json(addPackage);
+    }
+  });
+
+  //Delete Package
+  const deletePackage = require("./models/json/deletePackage/res.json");
+  const errorDeletePackage = require("./models/json/deletePackage/error.json");
+  app.post("/AC/v1/deletePackage", jsonParser, async (req, res) => {
+    if (req.body.accessToken == null) {
+      res.json(errorDeletePackage);
+    } else {
+      res.json(deletePackage);
+    }
+  });
 };

@@ -1,0 +1,11 @@
+{
+  "resultCode": "20000",
+  "resultDesc": "Success",
+  "developerMessage": "Success",
+  "data": {
+    "isShareMember": "false",
+    "isMultiSim": "false",
+    "is5GPackageAvailable": "true",
+    "is5GHighValue": "true"
+  }
+}

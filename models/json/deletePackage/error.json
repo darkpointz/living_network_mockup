@@ -1,0 +1,5 @@
+{
+  "resultCode": "5xxxxxxx",
+  "resultDesc": "$ERROR_DESCRIPTION",
+  "developerMessage": "$DEV_MESSAGE_OF_DOC "
+}
