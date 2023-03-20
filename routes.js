@@ -1,7 +1,6 @@
 const location = require("./models/location.js");
 const mode = require("./models/mode");
 
-
 const location_mockup = require("./models/json/location_mockup.json");
 const location_mockup2 = require("./models/json/locations_wifi.json");
 
@@ -143,13 +142,52 @@ module.exports = (app) => {
   });
 
   //Get Promo
-  const promo = require('./models/promo')
+  const promo = require("./models/promo");
   app.get("/AC/v1/promo", async (req, res) => {
     try {
       const resp = await promo.findOne({ _id: token });
       resp != null ? res.json(resp) : res.send("Something went wrong");
     } catch (error) {
       console.log("err : " + error);
+    }
+  });
+
+  //Get Msisdn
+  const msisdn = require("./models/msisdn");
+  app.get("/AC/v1/getMsisdn", async (req, res) => {
+    try {
+      const resp = await msisdn.findOne({ _id: token });
+      resp != null ? res.json(resp) : res.send("Something went wrong");
+    } catch (error) {
+      console.error();
+    }
+  });
+  //Update Msisdn
+  app.post("/AC/v1/updateMsisdn", jsonParser, async (req, res) => {
+    const filter = { _id: req.body.token };
+    const update = {
+      _id: req.body.token,
+      msisdn: req.body.msisdn,
+      cellId: req.body.cellId,
+      package: {
+        packageName: req.body.packageName,
+        expireDate: req.body.expireDate,
+      },
+      "5GMode": {
+        changeModePerDay: req.body.changeModePerDay,
+        currentMode: req.body.currentMode,
+        lastDefaultMode: req.body.lastDefaultMode,
+      },
+    };
+    try {
+      const resp = await msisdn.findByIdAndUpdate(filter, update, {
+        new: true,
+        upsert: true,
+        setDefaultsOnInsert: true,
+      });
+      resp != null ? res.json(resp) : res.send("Something went wrong");
+    } catch (error) {
+      console.error();
     }
   });
 };
