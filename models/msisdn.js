@@ -3,6 +3,8 @@ const db = require("../db/createConnection");
 const ln_mu = db.useDb("living_network_mockup");
 const Schema = mongoose.Schema;
 
+const mode = "5GMode"
+
 const msisdnSchema = new Schema(
   {
     _id: {
@@ -28,7 +30,7 @@ const msisdnSchema = new Schema(
         default: "20230331",
       },
     },
-    "5GMode": {
+    Mode5G: {
       changeModePerDay: {
         count: { type: String, default: "4" },
         currentDate: { type: String, default: "20230315" },

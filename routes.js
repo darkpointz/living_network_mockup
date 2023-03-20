@@ -170,13 +170,13 @@ module.exports = (app) => {
       msisdn: req.body.msisdn,
       cellId: req.body.cellId,
       package: {
-        packageName: req.body.packageName,
-        expireDate: req.body.expireDate,
+        packageName: req.body.package.packageName,
+        expireDate: req.body.package.expireDate,
       },
-      "5GMode": {
-        changeModePerDay: req.body.changeModePerDay,
-        currentMode: req.body.currentMode,
-        lastDefaultMode: req.body.lastDefaultMode,
+      Mode5G: {
+        changeModePerDay: req.body.Mode5G.changeModePerDay,
+        currentMode: req.body.Mode5G.currentMode,
+        lastDefaultMode: req.body.Mode5G.lastDefaultMode,
       },
     };
     try {
