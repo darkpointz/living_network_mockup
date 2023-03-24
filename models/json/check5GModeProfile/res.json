@@ -6,6 +6,9 @@
     "isShareMember": "false",
     "isMultiSim": "false",
     "is5GPackageAvailable": "true",
-    "is5GHighValue": "true"
+    "is5GHighValue": "true",
+    "currentPackage": "O2103P210305313",
+    "productSequenceId": "20002480109997",
+    "freeUnitExpireTime": "20230401000000+0700"
   }
 }
