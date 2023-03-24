@@ -1,0 +1,23 @@
+{
+  "key": "KPS4XfmiiQ+X8UORg7nz1wPeU0nVZi/0Ibj0PJC+HysBp2GngUJjq/hIFAbLGC1O",
+  "command": "mfaf.accessTokenRequested",
+  "value": {
+    "invokeId": "ios-20230324230141995JQmCydbZR3",
+    "headerBody": {
+      "msisdn": "668123456789",
+      "transactionId": "123456789"
+    },
+    "dataBody": {
+      "resultCode": "20000",
+      "resultDesc": "Success",
+      "developerMessage": "Success",
+      "data": {
+        "msisdn": "66889081797",
+        "networkType": "CPE",
+        "accessToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlVeTRLUjlzOEoifQ.eyJpc3MiOiJzcmYuYWlzLmNvLnRoL2FkbWQiLCJzdWIiOiJ0b2tlbl9jbGllbnRfY3JlZGVudGlhbHMiLCJhdWQiOiJTVzhMaUdGd3dqQmJ0eDd0d2c3Z2dhZHVxL2VlZzhFM2c3dmtrVlNCVis5aVpxZkRsbERqMnc9PSIsImV4cCI6MTk4NzI3MTE2MywiaWF0IjoxNjcxNzAxNjQzLCJqdGkiOiI0RjhBaUM1S1VzT3gyeDQ3UzhlOGJKIiwiY2xpZW50IjoiT1RBd01EQXdNREF3TURBd05qWXpMRzE1WVdsemZFSmhZMnRsYm1SOE1TNHdMakE9Iiwic3NpZCI6IjNxNGlmMWVaMTF4NkdDSzRPWGQ4VUIifQ.d64EmMj1NQEE1yciOZwVrdS7gAeD6A-gQb3SOHkAuap2vgcBTi07G_WvX5Q2gVlGlttq-j05S1Qp6LNKl3vo-DqKXhc5PpmYK6pMxDiur_97OBB2ePAdcJJRpMNQUBmLOXIFPKxKN4WP6mRTVCkayqso1G_v0cILtIpPokvFHOc",
+        "createDate": "2023-03-14 10:00:00",
+        "expireDate": "2023-03-14 11:00:00"
+      }
+    }
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "collection": {
+    "info": {
+      "_postman_id": "88ebed47-6974-4d01-9008-746288e86c9e",
+      "name": "LIVING_NETWORK",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "updatedAt": "2023-03-16T07:15:56.000Z"
+    },
+    "item": [
+      {
+        "name": "[LivingNetwork]-campaigns",
+        "id": "c903bccc-8c18-4dbe-b71a-49f66ad00b8b",
+        "protocolProfileBehavior": { "disableBodyPruning": true },
+        "request": {
+          "method": "POST",
+          "header": [
+            { "key": "Content-Type", "value": "application/json", "type": "text" },
+            { "key": "x-ssb-language", "value": "TH", "type": "text" },
+            { "key": "x-ssb-system", "value": "eService", "type": "text" },
+            { "key": "x-ssb-client-channel", "value": "LIVING_NETWORK", "type": "text" },
+            { "key": "x-ssb-msisdn", "value": "66910031346", "type": "text" },
+            { "key": "x-ssb-client-ip", "value": "10.252.163.170", "type": "text" },
+            { "key": "x-ssb-mobile", "value": "0910031346", "type": "text" },
+            { "key": "x-ssb-networktype", "value": "3PO", "type": "text" },
+            {
+              "key": "Authorization",
+              "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsIjoiTElWSU5HX05FVFdPUksiLCJpYXQiOjE2Nzg3NjYzMTAsImV4cCI6MTY3ODg1MjcxMCwiaXNzIjoiaHR0cHM6Ly90ZXN0LW15YWlzLm15YWlzLmFpcy5jby50aCIsInN1YiI6IkxJVklOR19ORVRXT1JLIn0.Evgg7GeiNPuNlzuH-PFgpN1KPLeIWPw7N2ZRAhbJJ0Za5krkXu3hmGo4Xf3HeomPcVF663sBFTq9rKI9x7ltNzlDMFERM10JxEoJ2L99FpQbehJQZoDesCyRkDgmFBvMAtFX7mwy-O1WUyUo7DZJlU-SDdMwVRk9p7Y8bRuFwaFPyo4cisstboIfdmJ_L8SkBitQR1zrIi7y5xnCPJCVCCLZZWaMER5tEhkPdm0Z9D8aHdtgjxQBNLAtNKEeZJBwJCSnGqIb93IMJOnnfbg1BaDf33Osj08sgLAw07U6_fqsyb1LMVJNAPmPLA5vcH2eac3IakaJu4vV9DWbmx5sfw",
+              "type": "text"
+            }
+          ],
+          "body": { "mode": "raw", "raw": "{\r\n    \"campaignHeader\": \"PACKAGES\",\r\n    \"operatingSystem\": \"ios\",\r\n    \"model\": \"iPhone11,6\",\r\n    \"search\": \"AIS\"\r\n}" },
+          "url": {
+            "raw": "https://sit-myais-api.cdc.ais.th/myaisbe/v1/home/campaigns",
+            "protocol": "https",
+            "host": ["sit-myais-api", "cdc", "ais", "th"],
+            "path": ["myaisbe", "v1", "home", "campaigns"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "[LivingNetwork]-currentPackage",
+        "id": "91783ae6-6d00-4de5-b5f8-c55f3d7f5484",
+        "protocolProfileBehavior": { "disableBodyPruning": true },
+        "request": {
+          "method": "GET",
+          "header": [
+            { "key": "Content-Type", "value": "application/json", "type": "text" },
+            { "key": "x-ssb-language", "value": "TH", "type": "text" },
+            { "key": "x-ssb-system", "value": "eService", "type": "text" },
+            { "key": "x-ssb-client-channel", "value": "LIVING_NETWORK", "type": "text" },
+            { "key": "x-ssb-msisdn", "value": "66910031346", "type": "text" },
+            { "key": "x-ssb-client-ip", "value": "10.252.163.170", "type": "text" },
+            { "key": "x-ssb-mobile", "value": "0910031346", "type": "text" },
+            { "key": "x-ssb-networktype", "value": "3PO", "type": "text" },
+            {
+              "key": "Authorization",
+              "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsIjoiTElWSU5HX05FVFdPUksiLCJpYXQiOjE2Nzc3MzI0NDEsImV4cCI6MTY3NzczMjUyNywiaXNzIjoiaHR0cHM6Ly90ZXN0LW15YWlzLm15YWlzLmFpcy5jby50aCIsInN1YiI6IkxJVklOR19ORVRXT1JLIn0.UbjHetcyj2_0C8Wcls0SLmatYbqTMgejv3liqS8wqTc4Be9uOJDF3h2Gs551Zm4hz7f9mUUlQt418tGI0HkSnR1KxHDk6tNx9cEXDaOre23y1e8PC-SavBZXCpbEbjKDbsbUDdLDcVRYGalVPmKv-yaJIdYmFnn0ReoTEaEluu9k4_nNfDTeZ3h16hSeZj3N7JvmvhktWe_xMJUv_GbUngXB2WIsvxJp3RE6V4UqLo6tyy0c-4WClXUPNvHyHhYfW8Hy28Coj5XVLJ-H0UixlGGxTmVxchDrhYi3GEXP4KKfL6aErIYXdboyp1rhJy7UM-uZEF3TMngN2ktDteN37w5555",
+              "type": "text"
+            }
+          ],
+          "body": { "mode": "raw", "raw": "" },
+          "url": {
+            "raw": "https://sit-myais-api.cdc.ais.th/myaisbe/v1/package/current",
+            "protocol": "https",
+            "host": ["sit-myais-api", "cdc", "ais", "th"],
+            "path": ["myaisbe", "v1", "package", "current"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "[LivingNetwork]-authenToken",
+        "id": "38f0a478-b4bd-4425-bdaf-7788765ae5de",
+        "protocolProfileBehavior": { "disableBodyPruning": true },
+        "request": {
+          "method": "POST",
+          "header": [
+            { "key": "Content-Type", "value": "application/json", "type": "text" },
+            { "key": "x-ssb-system", "value": "eService", "type": "text" },
+            { "key": "x-ssb-client-channel", "value": "LIVING_NETWORK", "type": "text" },
+            { "key": "x-ssb-client-ip", "value": "10.252.163.170", "type": "text" },
+            { "key": "Authorization", "value": "Basic bXlhaXNsaXZpbmdfbmV0d29yazpteWFpc2xpdmluZ19uZXR3b3Jr", "type": "text" }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjA2NTkzMzIwNjEiLCJuZXR3b3JrVHlwZSI6Ik1BU1MiLCJ0aW1lc3RhbXAiOiIyMDIzLTAzLTE2VDE0OjE5OjMyKzA3OjAwIn0.YNJ7LjFL-F1p9UgsgwqfpU3VG-YKHlHhE-pFRQqpbZI\"\r\n}"
+          },
+          "url": {
+            "raw": "https://sit-myais-api.cdc.ais.th/myaisbe/v1/home/ssbserv/authenToken",
+            "protocol": "https",
+            "host": ["sit-myais-api", "cdc", "ais", "th"],
+            "path": ["myaisbe", "v1", "home", "ssbserv", "authenToken"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "[LivingNetwork]-encryptText",
+        "id": "e2eeb4e8-7fda-4901-b0bc-dab4f8846683",
+        "protocolProfileBehavior": { "disableBodyPruning": true },
+        "request": {
+          "method": "POST",
+          "header": [
+            { "key": "Content-Type", "value": "application/json", "type": "text" },
+            { "key": "x-ssb-language", "value": "EN", "type": "text" },
+            { "key": "x-ssb-system", "value": "eService", "type": "text" },
+            { "key": "x-ssb-client-channel", "value": "MYAIS", "type": "text" },
+            { "key": "x-ssb-msisdn", "value": "66659332061", "type": "text" },
+            { "key": "x-ssb-client-ip", "value": "10.252.163.170", "type": "text" },
+            { "key": "Cache-Control", "value": "no-cache", "type": "text" },
+            { "key": "x-ssb-session-id", "value": "012d1566-6af6-4009-9690-ba1e84edef35", "type": "text" },
+            { "key": "x-ssb-client-browser", "value": "MyAIS/857 (com.ais.mimo.eservice; build:859; iOS 13.3.1) Alamofire/4.9.1", "type": "text" },
+            { "key": "x-ssb-mobile", "value": "0659332061", "type": "text" },
+            { "key": "x-ssb-networktype", "value": "CPE", "type": "text" }
+          ],
+          "body": { "mode": "raw", "raw": "{\r\n    \"moduleName\": \"LIVING_NETWORK\",\r\n    \"plainText\": \"0659332061\"\r\n}\r\n" },
+          "url": { "raw": "https://13.76.164.31/api/v1/utility/encryptText", "protocol": "https", "host": ["13", "76", "164", "31"], "path": ["api", "v1", "utility", "encryptText"] }
+        },
+        "response": []
+      },
+      {
+        "name": "[LivingNetwork]-applyPackage",
+        "id": "f0e68ddd-9824-42e8-9675-b6e294e3b98f",
+        "protocolProfileBehavior": { "disableBodyPruning": true },
+        "request": {
+          "method": "POST",
+          "header": [
+            { "key": "Content-Type", "value": "application/json", "type": "text" },
+            { "key": "x-ssb-language", "value": "TH", "type": "text" },
+            { "key": "x-ssb-system", "value": "eService", "type": "text" },
+            { "key": "x-ssb-client-channel", "value": "LIVING_NETWORK", "type": "text" },
+            { "key": "x-ssb-msisdn", "value": "66910031346", "type": "text" },
+            { "key": "x-ssb-client-ip", "value": "10.252.163.170", "type": "text" },
+            { "key": "x-ssb-mobile", "value": "0910031346", "type": "text" },
+            { "key": "x-ssb-networktype", "value": "3PO", "type": "text" },
+            {
+              "key": "Authorization",
+              "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsIjoiTElWSU5HX05FVFdPUksiLCJpYXQiOjE2Nzg3NjYzMTAsImV4cCI6MTY3ODg1MjcxMCwiaXNzIjoiaHR0cHM6Ly90ZXN0LW15YWlzLm15YWlzLmFpcy5jby50aCIsInN1YiI6IkxJVklOR19ORVRXT1JLIn0.Evgg7GeiNPuNlzuH-PFgpN1KPLeIWPw7N2ZRAhbJJ0Za5krkXu3hmGo4Xf3HeomPcVF663sBFTq9rKI9x7ltNzlDMFERM10JxEoJ2L99FpQbehJQZoDesCyRkDgmFBvMAtFX7mwy-O1WUyUo7DZJlU-SDdMwVRk9p7Y8bRuFwaFPyo4cisstboIfdmJ_L8SkBitQR1zrIi7y5xnCPJCVCCLZZWaMER5tEhkPdm0Z9D8aHdtgjxQBNLAtNKEeZJBwJCSnGqIb93IMJOnnfbg1BaDf33Osj08sgLAw07U6_fqsyb1LMVJNAPmPLA5vcH2eac3IakaJu4vV9DWbmx5sfw",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n  \"promotionCode\": \"P18021437\",\r\n  \"packType\": \"main\",\r\n  \"packName\": \"\",\r\n  \"countryName\": \"\",\r\n  \"eff_start_dt\": \"\",\r\n  \"effectiveOption\": \"B\"\r\n}"
+          },
+          "url": {
+            "raw": "https://sit-myais-api.cdc.ais.th/myaisbe/v1/home/common/applyPackages",
+            "protocol": "https",
+            "host": ["sit-myais-api", "cdc", "ais", "th"],
+            "path": ["myaisbe", "v1", "home", "common", "applyPackages"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "[LivingNetwork]-shareplan/listmember",
+        "id": "27745cac-f429-488b-b785-f6f41c31c71d",
+        "protocolProfileBehavior": { "disableBodyPruning": true },
+        "request": {
+          "method": "GET",
+          "header": [
+            { "key": "Content-Type", "value": "application/json", "type": "text" },
+            { "key": "x-ssb-language", "value": "TH", "type": "text" },
+            { "key": "x-ssb-system", "value": "eService", "type": "text" },
+            { "key": "x-ssb-client-channel", "value": "LIVING_NETWORK", "type": "text" },
+            { "key": "x-ssb-msisdn", "value": "66910031346", "type": "text" },
+            { "key": "x-ssb-client-ip", "value": "10.252.163.170", "type": "text" },
+            { "key": "x-ssb-mobile", "value": "0910031346", "type": "text" },
+            { "key": "x-ssb-networktype", "value": "3PO", "type": "text" },
+            {
+              "key": "Authorization",
+              "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsIjoiTElWSU5HX05FVFdPUksiLCJpYXQiOjE2Nzc3MzI0NDEsImV4cCI6MTY3NzczMjUyNywiaXNzIjoiaHR0cHM6Ly90ZXN0LW15YWlzLm15YWlzLmFpcy5jby50aCIsInN1YiI6IkxJVklOR19ORVRXT1JLIn0.UbjHetcyj2_0C8Wcls0SLmatYbqTMgejv3liqS8wqTc4Be9uOJDF3h2Gs551Zm4hz7f9mUUlQt418tGI0HkSnR1KxHDk6tNx9cEXDaOre23y1e8PC-SavBZXCpbEbjKDbsbUDdLDcVRYGalVPmKv-yaJIdYmFnn0ReoTEaEluu9k4_nNfDTeZ3h16hSeZj3N7JvmvhktWe_xMJUv_GbUngXB2WIsvxJp3RE6V4UqLo6tyy0c-4WClXUPNvHyHhYfW8Hy28Coj5XVLJ-H0UixlGGxTmVxchDrhYi3GEXP4KKfL6aErIYXdboyp1rhJy7UM-uZEF3TMngN2ktDteN37w5555",
+              "type": "text"
+            }
+          ],
+          "body": { "mode": "raw", "raw": "" },
+          "url": {
+            "raw": "https://sit-myais-api.cdc.ais.th/myaisbe/v1/services/shareplan/listmember",
+            "protocol": "https",
+            "host": ["sit-myais-api", "cdc", "ais", "th"],
+            "path": ["myaisbe", "v1", "services", "shareplan", "listmember"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "[LivingNetwork]-queryProductAndFreeUnit",
+        "id": "a742938a-930d-4c7b-b42f-ca07eef5664d",
+        "protocolProfileBehavior": { "disableBodyPruning": true },
+        "request": {
+          "method": "GET",
+          "header": [
+            { "key": "Content-Type", "value": "application/json", "type": "text" },
+            { "key": "x-ssb-language", "value": "TH", "type": "text" },
+            { "key": "x-ssb-system", "value": "eService", "type": "text" },
+            { "key": "x-ssb-client-channel", "value": "LIVING_NETWORK", "type": "text" },
+            { "key": "x-ssb-msisdn", "value": "66659332061", "type": "text" },
+            { "key": "x-ssb-client-ip", "value": "10.252.163.170", "type": "text" },
+            { "key": "x-ssb-mobile", "value": "0659332061", "type": "text" },
+            { "key": "x-ssb-networktype", "value": "CPE", "type": "text" },
+            {
+              "key": "Authorization",
+              "value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGFubmVsIjoiTElWSU5HX05FVFdPUksiLCJpYXQiOjE2Nzg5NTExODUsImV4cCI6MTY3ODk1NDc4NSwiaXNzIjoiaHR0cHM6Ly90ZXN0LW15YWlzLm15YWlzLmFpcy5jby50aCIsInN1YiI6IkxJVklOR19ORVRXT1JLIn0.K1vePOm1--fNv8amt0R8qZ5zAiFkuY2qWwc-B6dvDKLmv57BrOLOqlBW45Hr4vvfbFRAPIxkfWZ5swQ6yGcBS6nTHsjfG1w_tLmPOh-8mjVs7CXkR1GDDv0A-WzhX0T5CdpYUIht43LuvMDMyBZpjVzx_yKDiDzhWyyVL74gCgki9-50A2rtVqBJ90pavD4UNFA4tiAxmjpw4lW0_J1k7orDn7Tb1AGY7DqGPWCCoIhPQiDwn0nU7UUrW0sUOqeSf7Sf1Oqn9LsGkzQRvqhq1kiJkmx-JjfZsqK6QMSOkVPaJgnVDWqUQ0MRf1s9U47isUw44pqfWLF0fLMLcZpUiA",
+              "type": "text"
+            }
+          ],
+          "body": { "mode": "raw", "raw": "" },
+          "url": {
+            "raw": "https://sit-myais-api.cdc.ais.th/myaisbe/v1/package/queryProductAndFreeUnit",
+            "protocol": "https",
+            "host": ["sit-myais-api", "cdc", "ais", "th"],
+            "path": ["myaisbe", "v1", "package", "queryProductAndFreeUnit"]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
+}
