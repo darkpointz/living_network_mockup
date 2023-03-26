@@ -1,0 +1,16 @@
+{
+    "key": "KveOjzVLQ8IJnZzXIp9DnydAFYMiEXJ4L1bgtOyw7zXNnQ3zYisrxB8NDd3xikJp",
+    "command": "mfaf.5GModeDeactivated",
+    "value": {
+      "invokeId": "ios-2023032701131243CklziTc1EK",
+      "headerBody": {
+        "msisdn": "66889081797"
+      },
+      "dataBody": {
+        "resultCode": "20000",
+        "resultDesc": "Success",
+        "developerMessage": "Success"
+      }
+    }
+  }
+  

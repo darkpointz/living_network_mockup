@@ -1,0 +1,18 @@
+{
+  "key": "KveOjzVLQ8IJnZzXIp9DnydAFYMiEXJ4L1bgtOyw7zXNnQ3zYisrxB8NDd3xikJp",
+  "command": "mfaf.currentCellAvailabilityChecked",
+  "value": {
+    "invokeId": "ios-20230324230141995JQmCydbZR3",
+    "headerBody": {
+      "msisdn": "66889081797"
+    },
+    "dataBody": {
+      "resultCode": "20000",
+      "description": "Success",
+      "msisdn": "66889081797",
+      "cellId": "5200303F7A3A8",
+      "capacity": 5,
+      "current5GModeEnabler": 3
+    }
+  }
+}

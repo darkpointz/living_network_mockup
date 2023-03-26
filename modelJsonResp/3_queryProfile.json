@@ -1,0 +1,35 @@
+{
+  "key": "KveOjzVLQ8IJnZzXIp9DnydAFYMiEXJ4L1bgtOyw7zXNnQ3zYisrxB8NDd3xikJp",
+  "command": "mfaf.serviceProfileRequested",
+  "value": {
+    "invokeId": "ios-20230326215075996JU3Jh5nvu",
+    "headerBody": {
+      "msisdn": "66889081797",
+      "transactionId": "123456789"
+    },
+    "dataBody": {
+      "resultCode": "20000",
+      "resultDesc": "Success",
+      "developerMessage": "Success",
+      "data": {
+        "msisdn": "66889081797",
+        "package": {
+          "currentPackage": "O2103P210305313",
+          "productSequenceId": "O2103P210305313",
+          "freeUnitExpireTime": "20230401000000+0700"
+        },
+        "5GMode": {
+          "changeModePerDay": {
+            "count": "4",
+            "currentDate": "20230315"
+          },
+          "currentMode": {
+            "modeName": "boost_mode",
+            "expireDate": "20230330235959"
+          },
+          "lastDefaultMode": "max_mode"
+        }
+      }
+    }
+  }
+}
