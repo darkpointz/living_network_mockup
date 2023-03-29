@@ -17,29 +17,10 @@ const msisdnSchema = new Schema(
       default: "0889081797",
     },
     package: {
-      currentPackage: {
-        type: String,
-        default: "O2103P210305313",
-      },
-      productSequenceId: {
-        type: String,
-        default: "O2103P210305313",
-      },
-      freeUnitExpireTime: {
-        type: String,
-        default: "20230401000000+0700",
-      },
+      type: Object,
     },
     Mode5G: {
-      changeModePerDay: {
-        count: { type: String, default: "4" },
-        currentDate: { type: String, default: "20230315" },
-      },
-      currentMode: {
-        modeName: { type: String, default: "boost_mode" }, //max_mode, eco_mode, boost_mode, game_mode
-        expireDate: { type: String, default: "20230315 2359595" },
-      },
-      lastDefaultMode: { type: String, default: "max_mode" }, //max_mode, eco_mode
+      type: Object,
     },
   },
   { collection: "Msisdn", versionKey: false, minimize: false }
