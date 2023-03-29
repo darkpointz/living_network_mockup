@@ -168,10 +168,10 @@ module.exports = (app) => {
     const update = {
       _id: req.body.token,
       msisdn: req.body.msisdn,
-      cellId: req.body.cellId,
       package: {
-        packageName: req.body.package.packageName,
-        expireDate: req.body.package.expireDate,
+        currentPackage: req.body.package.currentPackage,
+        productSequenceId: req.body.package.productSequenceId,
+        freeUnitExpireTime: req.body.package.freeUnitExpireTime
       },
       Mode5G: {
         changeModePerDay: req.body.Mode5G.changeModePerDay,
