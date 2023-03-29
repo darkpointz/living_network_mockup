@@ -3,7 +3,7 @@ const db = require("../db/createConnection");
 const ln_mu = db.useDb("living_network_mockup");
 const Schema = mongoose.Schema;
 
-const mode = "5GMode"
+const mode = "5GMode";
 
 const msisdnSchema = new Schema(
   {
@@ -16,21 +16,21 @@ const msisdnSchema = new Schema(
       type: String,
       default: "0889081797",
     },
-    cellId: {
-      type: String,
-      default: "koko",
-    },
     package: {
-      packageName: {
+      currentPackage: {
         type: String,
-        default: "4",
+        default: "O2103P210305313",
       },
-      expireDate: {
+      productSequenceId: {
         type: String,
-        default: "20230331",
+        default: "O2103P210305313",
+      },
+      freeUnitExpireTime: {
+        type: String,
+        default: "20230401000000+0700",
       },
     },
-    Mode5G: {
+    "5GMode": {
       changeModePerDay: {
         count: { type: String, default: "4" },
         currentDate: { type: String, default: "20230315" },
