@@ -173,7 +173,7 @@ module.exports = (app) => {
         productSequenceId: req.body.package.productSequenceId,
         freeUnitExpireTime: req.body.package.freeUnitExpireTime
       },
-      Mode5G: {
+      "5GMode": {
         changeModePerDay: req.body.Mode5G.changeModePerDay,
         currentMode: req.body.Mode5G.currentMode,
         lastDefaultMode: req.body.Mode5G.lastDefaultMode,
