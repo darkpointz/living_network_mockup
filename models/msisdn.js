@@ -30,7 +30,7 @@ const msisdnSchema = new Schema(
         default: "20230401000000+0700",
       },
     },
-    "5GMode": {
+    Mode5G: {
       changeModePerDay: {
         count: { type: String, default: "4" },
         currentDate: { type: String, default: "20230315" },
