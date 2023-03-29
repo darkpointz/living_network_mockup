@@ -168,16 +168,8 @@ module.exports = (app) => {
     const update = {
       _id: req.body.token,
       msisdn: req.body.msisdn,
-      package: {
-        currentPackage: req.body.package.currentPackage,
-        productSequenceId: req.body.package.productSequenceId,
-        freeUnitExpireTime: req.body.package.freeUnitExpireTime
-      },
-      "Mode5G": {
-        changeModePerDay: req.body.Mode5G.changeModePerDay,
-        currentMode: req.body.Mode5G.currentMode,
-        lastDefaultMode: req.body.Mode5G.lastDefaultMode,
-      },
+      package: req.body.package,
+      Mode5G: req.body.Mode5G,
     };
     try {
       const resp = await msisdn.findByIdAndUpdate(filter, update, {
