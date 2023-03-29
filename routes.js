@@ -57,6 +57,18 @@ module.exports = (app) => {
     }
   });
 
+  app.get("/getAllLocation", async (req, res) => {
+    const id = ["LM_WIFI_AP_BKK", "LM_CCSM_AISSHOP_BKK"]
+    try {
+      const locationAll = await location.find({
+        _id: { $in: id },
+      });
+      locationAll != null ? res.json(locationAll) : res.send("Something went wrong");
+    } catch (error) {
+      console.log("err : " + error);
+    }
+  });
+
   //=========================================================================================================================================================================
 
   //===============================================================================Mode======================================================================================
