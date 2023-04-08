@@ -4,7 +4,8 @@
   "value": {
     "invokeId": "command-oda=a9d26c07-596f-47c7-af5e-5665b2b99500359BED77-F981-4DD1-A3D7-EE562564DD51",
     "headerBody": {
-      "msisdn": "66889081797"
+      "msisdn": "66889081797",
+      "transactionId": "123456789"
     },
     "dataBody": {
       "resultCode": "20000",
