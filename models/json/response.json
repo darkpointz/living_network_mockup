@@ -1,0 +1,62 @@
+{
+   "location_wifi":[
+      {
+         "id":"${SLM_SITE_AP_SSID_ID}",
+         "name":"Wifi 1",
+         "address":"61 ซอย พหลโยธิน 8 Samsen Nai, Phaya Thai, Bangkok 10400",
+         "image_type":"wifi",
+         "lat":100.0,
+         "lng":13.222,
+         "distance":0.0
+      }
+   ],
+   "location_shop":[
+      {
+         "id":"${CCSM_LOCATION_CODE}",
+         "name":"Ais Shop 1",
+         "address":"61 ซอย พหลโยธิน 8 Samsen Nai, Phaya Thai, Bangkok 10400",
+         "image_type":"shop",
+         "lat":100.0,
+         "lng":13.222,
+         "distance":0.0
+      },
+      {
+         "id":"${CCSM_LOCATION_CODE}",
+         "name":"Ais Shop 1",
+         "address":"61 ซอย พหลโยธิน 8 Samsen Nai, Phaya Thai, Bangkok 10400",
+         "image_type":"shop",
+         "lat":100.0,
+         "lng":13.222,
+         "distance":0.0
+      }
+   ],
+   "location_grids":[
+      {
+         "id":"${features.id}",
+         "cordinates":[
+            [
+               [
+                  1.00,
+                  1.00
+               ],
+               [
+                  1.00,
+                  1.03
+               ],
+               [
+                  1.00,
+                  1.03
+               ],
+               [
+                  1.00,
+                  1.03
+               ],
+               [
+                  1.00,
+                  1.00
+               ]
+            ]
+         ]
+      }
+   ]
+}

@@ -2,7 +2,7 @@
   "key": "KveOjzVLQ8IJnZzXIp9DnydAFYMiEXJ4L1bgtOyw7zXNnQ3zYisrxB8NDd3xikJp",
   "command": "mfaf.serviceProfileRequested",
   "value": {
-    "invokeId": "ios-20230326215075996JU3Jh5nvu",
+    "invokeId": "command-oda=a9d26c07-596f-47c7-af5e-5665b2b99500359BED77-F981-4DD1-A3D7-EE562564DD51",
     "headerBody": {
       "msisdn": "66889081797",
       "transactionId": "123456789"
@@ -20,12 +20,12 @@
         },
         "5GMode": {
           "changeModePerDay": {
-            "count": "4",
+            "count": 4,
             "currentDate": "20230315"
           },
           "currentMode": {
-            "modeName": "boost_mode",
-            "expireDate": "20230330235959"
+            "modeName": "max_mode",
+            "expireDate": "20230406:235959"
           },
           "lastDefaultMode": "max_mode"
         }

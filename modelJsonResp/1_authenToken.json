@@ -14,9 +14,9 @@
       "data": {
         "msisdn": "66889081797",
         "networkType": "CPE",
-        "accessToken": "testToken",
-        "createDate": "2023-03-14 10:00:00",
-        "expireDate": "2023-03-14 11:00:00"
+        "accessToken": "KokoPigKoJingkoTestToken",
+        "createDate": "2023-04-05 23:00:00",
+        "expireDate": "2023-04-05 23:59:00"
       }
     }
   }

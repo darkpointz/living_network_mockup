@@ -57,13 +57,35 @@ module.exports = (app) => {
     }
   });
 
-  app.get("/getAllLocation", async (req, res) => {
-    const id = ["LM_WIFI_AP_BKK", "LM_CCSM_AISSHOP_BKK"]
+  app.post("/getAllLocation", jsonParser, async (req, res) => {
+    const id = ["LM_WIFI_AP_BKK", "LM_CCSM_AISSHOP_BKK"];
+    const resp = {
+      location_wifi: [],
+      location_shop: [],
+      location_grids: [
+        {
+          id: "${features.id}",
+          cordinates: [
+            [
+              [1.0, 1.0],
+              [1.0, 1.03],
+              [1.0, 1.03],
+              [1.0, 1.03],
+              [1.0, 1.0],
+            ],
+          ],
+        },
+      ],
+    };
     try {
-      const locationAll = await location.find({
-        _id: { $in: id },
-      });
-      locationAll != null ? res.json(locationAll) : res.send("Something went wrong");
+      if (req.body.msisd == null && req.body.maxDistance) {
+        res.json(errorAuthenToken);
+      } else {
+        const locationAll = await location.find({
+          _id: { $in: id },
+        });
+        locationAll != null ? res.json(locationAll) : res.send("Something went wrong");
+      }
     } catch (error) {
       console.log("err : " + error);
     }

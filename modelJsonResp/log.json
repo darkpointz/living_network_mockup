@@ -1,0 +1,68 @@
+{
+  "may": [
+    {
+      "key": "VHHfjkmfA+LCvgXc9QlwXxXyuUxZUkndZGz0qPi/zuh1cneVlV+jd05eG78xt6Wk",
+      "value": {
+        "invokeId": "command-oda=7be257f3-0b7d-4138-a27f-67ee7f606e4b59F34040-7618-417B-B792-24AE6B23A475",
+        "headerBody": { "msisdn": "66537074341", "transactionId": "1680104974602333042" },
+        "dataBody": {
+          "resultCode": "20000",
+          "resultDesc": "Success",
+          "developerMessage": "Success",
+          "data": {
+            "msisdn": "66537074341",
+            "networkType": "CPE",
+            "accessToken": "eyJhbGciOiJIUzI1NiJ9.eyJtb2JpbGVObyI6IjA2NTkzMzIwNjEiLCJuZXR3b3JrVHlwZSI6Ik1BU1MiLCJ0aW1lc3RhbXAiOiIyMDIzLTAzLTIzVDE0OjU3OjA0KzA3OjAwIn0.SJcZsrExTIqNwyzm6cn7CdpM1Vn_KMZdjnGbmZD_cQ0",
+            "createDate": "2023-03-14 10:00:00",
+            "expireDate": "2023-04-14 11:00:00"
+          }
+        }
+      }
+    },
+    {
+      "key": "VHHfjkmfA+LCvgXc9QlwXxXyuUxZUkndZGz0qPi/zuh1cneVlV+jd05eG78xt6Wk",
+      "value": {
+        "invokeId": "command-oda=7be257f3-0b7d-4138-a27f-67ee7f606e4b59F34040-7618-417B-B792-24AE6B23A475",
+        "headerBody": { "msisdn": "66537074341", "transactionId": "1680101725543212668" },
+        "dataBody": {
+          "resultCode": "20000",
+          "resultDesc": "Success",
+          "developerMessage": "Success",
+          "data": {
+            "isShareMember": "false",
+            "isMultiSim": "false",
+            "is5GPackageAvailable": "true",
+            "is5GHighValue": "false",
+            "currentPackage": "O2103P210305313",
+            "productSequenceId": "20002480109997",
+            "freeUnitExpireTime": "20230410235959+0700"
+          }
+        }
+      }
+    },
+    {
+      "key": "/bSEdmjQTXt19IDyiL4aDVb6bC+ESzF/M4aviLT0KGi8WBHVrk6jOBbFqoSip17U",
+      "invokeId": "command-oda=fe2efb92-0787-4a53-b40a-a83b58643ee8BE27BF5A-26A4-4F1A-90A4-9AA4F6F87EB1",
+      "command": "mfaf.serviceQualificationRequested",
+      "value": {
+        "invokeId": "command-oda=fe2efb92-0787-4a53-b40a-a83b58643ee8BE27BF5A-26A4-4F1A-90A4-9AA4F6F87EB1",
+        "headerBody": { "msisdn": "", "transactionId": "1680861838184800205" },
+        "dataBody": {
+          "resultCode": "20000",
+          "resultDesc": "Success",
+          "developerMessage": "Success",
+          "msisdn": "66937060046",
+          "data": {
+            "isShareMember": "false",
+            "isMultiSim": "false",
+            "is5GPackageAvailable": "true",
+            "is5GHighValue": "false",
+            "currentPackage": "",
+            "productSequenceId": "1200173",
+            "freeUnitExpireTime": "20230501000000+0700"
+          }
+        }
+      }
+    }
+  ]
+}

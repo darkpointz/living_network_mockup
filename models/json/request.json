@@ -1,0 +1,6 @@
+{
+  "request": {
+    "msisd": "0623456789",
+    "maxDistance": 1000 //"max distance in meters" 
+    } 
+}
